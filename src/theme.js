@@ -23,6 +23,7 @@ export const theme = Object.freeze({
   },
   fontWeights: {
     normal: 400,
+    semiBold: 600,
     bold: 700,
   },
   lineHeights: {
@@ -31,6 +32,7 @@ export const theme = Object.freeze({
   },
   borders: {
     none: 'none',
+    slim: '1px solid',
   },
   radii: {
     none: '0',
