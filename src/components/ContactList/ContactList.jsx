@@ -9,10 +9,9 @@ const ContactList = ({ values, handleDelete }) => {
         return (
           <ContactItem
             key={id}
-            id={id}
             name={name}
             number={number}
-            handleDelete={handleDelete}
+            handleDelete={() => handleDelete(id)}
           />
         );
       })}
@@ -23,6 +22,13 @@ const ContactList = ({ values, handleDelete }) => {
 export default ContactList;
 
 ContactList.propTypes = {
-  values: PropTypes.arrayOf(PropTypes.shape().isRequired).isRequired,
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      handleDelete: PropTypes.func,
+    }).isRequired
+  ).isRequired,
   handleDelete: PropTypes.func.isRequired,
 };

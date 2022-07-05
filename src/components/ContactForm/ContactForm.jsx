@@ -10,6 +10,11 @@ const INITIAL_VALUES = {
 class ContactForm extends Component {
   state = { ...INITIAL_VALUES };
 
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    checkDuplicates: PropTypes.func.isRequired,
+  };
+
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -67,8 +72,3 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  checkDuplicates: PropTypes.func.isRequired,
-};
